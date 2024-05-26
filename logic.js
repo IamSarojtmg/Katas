@@ -1,21 +1,10 @@
-const str = 'madam'
+let fic = 3
+let result = 1
 
-//conv to array
-//use reverse
-//check if they are same or not
 
-function x(str){
-
-  const toArr = str.split('')
-
-  
-  const reverse = toArr.reverse()
-
-  
-  const join = reverse.join('')
-  
-str === join ? console.log(true) : console.log(false);
-  
+for (let i = 1; i <= fic; i++) {
+    // console.log(i);// use this to multiple
+    console.log(result*= i)
 }
 
-x(str)
+// console.log(result);
