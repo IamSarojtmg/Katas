@@ -1,10 +1,22 @@
-const largestNum = [1,2,3,44,5,6,77,100]
+const nestedArr = [[1,2,33],[44,5,6]]
 
-const shallow = [...largestNum]
-let answer=0
-const result = shallow.filter(e=>{
-    // console.log(e);
-    answer = Math.max(e)
+const shallow = [...nestedArr]
+
+
+//look at each of them
+//filter out the large ones
+//push to new arr
+
+let newArr = []
+
+shallow.forEach(e=>{
+
+let max = Math.max(...e)
+newArr.push(max)
+
+// e.filter(arr=>{
+// console.log(max);
+// })
 })
 
-console.log(answer);
+console.log(newArr);
