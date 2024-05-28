@@ -1,22 +1,18 @@
-const nestedArr = [[1,2,33],[44,5,6]]
+const capArr =['kiro','siti']
+const shallow = [...capArr]
 
-const shallow = [...nestedArr]
+let result =[]
 
-
-//look at each of them
-//filter out the large ones
-//push to new arr
-
-let newArr = []
-
-shallow.forEach(e=>{
-
-let max = Math.max(...e)
-newArr.push(max)
-
-// e.filter(arr=>{
-// console.log(max);
-// })
+capArr.map(e=>{
+    let toUpper = e[0].toUpperCase()
+    let cutted = e.substring(1)
+    result.push(toUpper+cutted)
 })
 
-console.log(newArr);
+console.log(result);
+
+
+//shallow cop
+//litrate over each element using map
+//find the first letter of the string
+//send it to new arr
