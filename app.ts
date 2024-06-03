@@ -1,17 +1,23 @@
-interface userInterface {
-  id: number;
+interface owner {
   name: string;
-  age?: number;
+  age: number;
 }
 
-let user: userInterface = {
-  id: 1,
-  name: "Saroj",
-  age:55
+interface pet {
+  breed: string;
+  weight: number;
+}
+
+type customer = owner & pet;
+
+const custDetail = (details: customer): void => {
+  console.log(
+    `${details.name} is the owner of the the ${details.breed} whose weight is ${details.weight}`
+  );
 };
 
-if (!user.age) {
-  console.log("the user has not given us the age");
-} else {
-  console.log(user.age);
-}
+custDetail({
+  name: "Saroj",
+  breed: "dog",
+  weight: 70,
+});
