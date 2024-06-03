@@ -1,5 +1,12 @@
-var concat = function (a, b) {
-    return a + b;
+"use strict";
+let user = {
+    id: 1,
+    name: "Saroj",
+    age: 55
 };
-console.log(concat("hi", "world"));
-console.log(concat("3", "3"));
+if (!user.age) {
+    console.log("the user has not given us the age");
+}
+else {
+    console.log(user.age);
+}
