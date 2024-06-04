@@ -1,10 +1,15 @@
 "use strict";
-const custDetail = (details) => {
-    console.log(`${details.name} is the owner of the the ${details.breed} whose weight is ${details.weight}`);
+var Shapes;
+(function (Shapes) {
+    Shapes["Square"] = "square";
+    Shapes["Rectangle"] = "rectangle";
+    Shapes["Triangle"] = "triangle";
+    Shapes["Circle"] = "circle";
+})(Shapes || (Shapes = {}));
+let userShape = Shapes.Circle;
+console.log(userShape);
+const printFunc = (s) => {
+    console.log(s);
 };
-custDetail({
-    name: "Saroj",
-    breed: "dog",
-    weight: 70,
-    age: 33
-});
+printFunc(Shapes.Square);
+printFunc(Shapes.true);
