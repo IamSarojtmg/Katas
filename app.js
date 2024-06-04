@@ -1,15 +1,9 @@
 "use strict";
-var Shapes;
-(function (Shapes) {
-    Shapes["Square"] = "square";
-    Shapes["Rectangle"] = "rectangle";
-    Shapes["Triangle"] = "triangle";
-    Shapes["Circle"] = "circle";
-})(Shapes || (Shapes = {}));
-let userShape = Shapes.Circle;
-console.log(userShape);
-const printFunc = (s) => {
-    console.log(s);
+const merc = {
+    name: "Mercedes",
+    COO: "Germany",
+    modelNum: 22,
 };
-printFunc(Shapes.Square);
-printFunc(Shapes.true);
+merc.name = 'BMW';
+merc.modelNum = 99;
+console.log(merc);
