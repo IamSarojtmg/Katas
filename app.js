@@ -1,5 +1,10 @@
 "use strict";
-const printId = (id) => {
-    console.log(id);
+const custDetail = (details) => {
+    console.log(`${details.name} is the owner of the the ${details.breed} whose weight is ${details.weight}`);
 };
-printId(true);
+custDetail({
+    name: "Saroj",
+    breed: "dog",
+    weight: 70,
+    age: 33
+});

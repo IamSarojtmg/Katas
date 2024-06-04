@@ -12,7 +12,7 @@ type customer = owner & pet;
 
 const custDetail = (details: customer): void => {
   console.log(
-    `${details.name} is the owner of the the ${details.breed} whose weight is ${details.weight}`
+    `${details.name} is the owner of the the ${details.breed} whose weight is ${details.weight} kg`
   );
 };
 
@@ -20,4 +20,5 @@ custDetail({
   name: "Saroj",
   breed: "dog",
   weight: 70,
+  age:33
 });
