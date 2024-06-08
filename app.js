@@ -1,28 +1,47 @@
-"use strict";
-function solution(numbers) {
-    if (numbers.length < 3) {
-        return [];
+const passengers = [
+    {
+      id: 1,
+      passengerName: "Freddie Mercury",
+      isVegetarianOrVegan: false,
+      connectedFlights: 2,
+    },
+    {
+      id: 2,
+      passengerName: "Amy Winehouse",
+      isVegetarianOrVegan: true,
+      connectedFlights: 4,
+    },
+      {
+      id: 3,
+      passengerName: "Kurt Cobain",
+      isVegetarianOrVegan: true,
+      connectedFlights: 3,
+    },
+       {
+      id: 3,
+      passengerName: "Michael Jackson",
+      isVegetarianOrVegan: true,
+      connectedFlights: 1,
+    },
+  ];
+
+  // Main Question: Get the passengers' names using the data provided 
+
+passengers.filter(e=>{
+    // console.log(e.passengerName);
+    if (e.isVegetarianOrVegan === true) {
+        // console.log(e);
     }
+})
 
-    let zigzags = [];
-    for (let i = 0; i < numbers.length - 2; i++) {
-        let a = numbers[i];
-        let b = numbers[i + 1];
-        let c = numbers[i + 2];
-        console.log(a,'a');
-        console.log(b,'b');
+// Bonus Part (a)- Return vegetarians/vegans
 
-        if ((a < b && b > c) || (a > b && b < c)) {
-            zigzags.push(1);
-        } else {
-            zigzags.push(0);
-        }
-    }
+// Bonus Part (b)- Sort passengers by the number of connected flights in descending order
 
-    return zigzags;
-}
+passengers.sort((a,b)=>{
+    // console.log(a);
+    // console.log(b);
+    return a.connectedFlights - b.connectedFlights
+})
 
-// Example usage:
-const numbers = [1, 3, 2, 4, 1,];
-console.log(solution(numbers));  // Output: [1, 1, 1]
-
+console.log(passengers);
