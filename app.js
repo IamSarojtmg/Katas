@@ -1,27 +1,18 @@
-function removeUrlAnchor(url) {
-// console.log(url.length);
-let index = url.indexOf('#')
-// console.log(index, 'index');
+var isAnagram = function (test, original) {
+  let result;
+  const x = test.toLowerCase().split("").sort();
+  const y = original.toLowerCase().split("").sort();
+  for (let i = 0; i < x.length; i++) {
+    if (!(x[i] === y[i])) {
+      result = false;
+      break;
+    } else {
+      result = true;
+    }
+  }
 
-let sub = url.length - index
-
-// console.log(sub,'sub');
-
-
-
-
-
-  if(url.includes('#')){
-// return url.slice(9,-sub)
-   console.log(url.slice(0,-sub))
- }
-
- return url
+  console.log(result);
+  return result;
+};
 
 
-}
-removeUrlAnchor("www.codewars.com#about");
-removeUrlAnchor("https://toast.mil#broc");
-removeUrlAnchor("www.codewars.com/katas/");
-removeUrlAnchor('http://www.egg.com#p')
-removeUrlAnchor('www.egg.gov#mieng')
