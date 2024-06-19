@@ -1,13 +1,18 @@
-function highAndLow(numbers) {
-  const newArr = [];
+function solution(number) {
+  if (number <= 0) {
+    return 0;
+  }
+  let newArr = [];
+  let sum = 0;
 
-  const split = numbers.split(" ");
-  numbers.split(" ").map((e) => {
-    newArr.push(Number(e));
+  for (let i = 1; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      newArr.push(i);
+    }
+  }
+
+  newArr.map((e) => {
+    sum += e;
   });
-
-  const result = Math.max(...split).toString() + " " + Math.min(...split).toString();
-  return result;
+  return sum;
 }
-
-highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4")
