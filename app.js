@@ -1,27 +1,33 @@
-function likes(names) {
-  let result = "";
-  if (names.length === 0) {
-    result = "no one likes this";
-  } else if (names.length === 1) {
-    result = names[0] + " likes this";
-  } else if (names.length > 1 && names.length < 4) {
-    const lastName = " and " + names[names.length - 1] + " like this";
-    names.pop();
-    result = names.join(", ") + lastName
+function generateHashtag(str) {
+  console.log(str.trim().length);
+  let result;
+  if (str.length === 0 || str.length > 140) {
+result = false
   } else {
-    const firstTwo = `${names[0]}, ${names[1]}`;
-    for (let i = 0; i < 2; i++) {
-      names.shift();
-    }
+    //split it
+    let split = str.split(" ");
 
-    result = `${firstTwo} and ${names.length} others like this`;
+    //map it and make all of them cap for the first character
+    let firstCharCap = split.map((e) => {
+      let replace = e.replace(e[0], e[0].toUpperCase());
+      return replace;
+    });
+
+    result = `#${firstCharCap.join("")}`;
+
+
   }
-console.log(result);
-  return result;
+  console.log(result);
+  return result
 }
 
-likes([]);
-likes(["Peter"]);
-likes(["Jacob", "Alex"]); //'Jacob and Alex like this'
-likes(["Max", "John", "Mark"]); //'Max, John and Mark like this'
-likes(["Alex", "Jacob", "Mark", "Max"]); //'Alex, Jacob and 2 others like this'
+// generateHashtag("")
+// generateHashtag(" ".repeat(200))
+// generateHashtag("Do We have A Hashtag");
+// generateHashtag("Codewars")
+generateHashtag("code" + " ".repeat(140) + "wars")
+
+// let conv = '#'+str.replace(/\s+/g, '')
+// let upperCase = conv.replace(conv[1], conv[1].toUpperCase())
+// console.log(upperCase);
+// return upperCase
