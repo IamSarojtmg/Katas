@@ -1,33 +1,44 @@
 function generateHashtag(str) {
-  console.log(str.trim().length);
   let result;
-  if (str.length === 0 || str.length > 140) {
-result = false
+  let removeMultipleSpace = str.replace(/  +/g, " ");
+  if (removeMultipleSpace.length === 0 || removeMultipleSpace.length >= 140 || removeMultipleSpace === ' ') {
+    result = false;
   } else {
-    //split it
-    let split = str.split(" ");
-
-    //map it and make all of them cap for the first character
+    let split = removeMultipleSpace.split(" ");
     let firstCharCap = split.map((e) => {
       let replace = e.replace(e[0], e[0].toUpperCase());
       return replace;
     });
-
     result = `#${firstCharCap.join("")}`;
-
-
   }
-  console.log(result);
-  return result
+  return result;
 }
+generateHashtag("");
+generateHashtag(" ".repeat(200));
+generateHashtag("Do We have A Hashtag"); //#DoWeHaveAHashtag
+generateHashtag("Codewars");
+generateHashtag("Codewars Is Nice");
+generateHashtag("Codewars is nice");
+generateHashtag("code" + " ".repeat(140) + "wars");
+generateHashtag(
+  "Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"
+);
+generateHashtag("a".repeat(139)), "#A" + "a".repeat(138);
+generateHashtag("a".repeat(140));
 
-// generateHashtag("")
-// generateHashtag(" ".repeat(200))
-// generateHashtag("Do We have A Hashtag");
-// generateHashtag("Codewars")
-generateHashtag("code" + " ".repeat(140) + "wars")
+// if (str.length === 0 || str.length > 140) {
+//   result = false;
+//   // console.log(result);
+// } else {
+//   let split = str.split(" ");
 
-// let conv = '#'+str.replace(/\s+/g, '')
-// let upperCase = conv.replace(conv[1], conv[1].toUpperCase())
-// console.log(upperCase);
-// return upperCase
+//   let firstCharCap = split.map((e) => {
+//     let replace = e.replace(e[0], e[0].toUpperCase());
+//     return replace;
+//   });
+
+//   result = `#${firstCharCap.join("")}`;
+//   // console.log(result);
+// }
+// // console.log(result);
+// return result;
