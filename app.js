@@ -1,29 +1,23 @@
 function findOdd(A) {
-  //check how many time each number appears.
-  let count = {}
-  const x = A.forEach(e => {
-// console.log(count);
-if(count[e]){
-  count[e]+=1
-}else{
-  count[e] = 1
-}
+  let count = {};
+  const x = A.forEach((e) => {
+    if (count[e]) {
+      count[e] += 1;
+    } else {
+      count[e] = 1;
+    }
   });
-  
-  console.log(count);
+
+  let result = 0;
+  for (const obj in count) {
+    if (count[obj] % 2 !== 0) {
+      result = obj;
+    }
+  }
   return count;
 }
 
-findOdd([1,1,2])
+findOdd([1, 1, 2]);
+findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]);
 
 
-
-
-
-
-
-
-
-
-// return than number
-// if that number is not divisible by 2 than return that number in the array.
