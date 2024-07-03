@@ -1,23 +1,19 @@
-function findOdd(A) {
-  let count = {};
-  const x = A.forEach((e) => {
-    if (count[e]) {
-      count[e] += 1;
-    } else {
-      count[e] = 1;
-    }
-  });
+function arrayDiff(a, b) {
 
-  let result = 0;
-  for (const obj in count) {
-    if (count[obj] % 2 !== 0) {
-      result = obj;
-    }
-  }
-  return count;
+let x = a.filter(e=>{
+
+if(!(b.includes(e))){
+  return true
+}else{
+  return false
+}
+})
+console.log(x);
+return x
 }
 
-findOdd([1, 1, 2]);
-findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]);
+arrayDiff([1, 2], [1]); //2
+arrayDiff([1,2,2,2,3],[2])
+arrayDiff([-19,-10,-5,-9,4,9,-11,0],[-19,-10,-5,-9,4,9,-11])
 
 
