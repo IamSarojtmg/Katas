@@ -1,19 +1,21 @@
-function arrayDiff(a, b) {
+function createPhoneNumber(numbers) {
+  let first3 = [];
+  let mid = [];
+  let end = [];
 
-let x = a.filter(e=>{
+  for (let i = 0; i < numbers.length; i++) {
+    if (i < 3) {
+      first3.push(numbers[i]);
+    } else if (i < 6) {
+      mid.push(numbers[i]);
+    } else {
+      end.push(numbers[i]);
+    }
+  }
 
-if(!(b.includes(e))){
-  return true
-}else{
-  return false
+  return `(${first3.join("")}) ${mid.join("")}-${end.join("")}`;
 }
-})
-console.log(x);
-return x
-}
 
-arrayDiff([1, 2], [1]); //2
-arrayDiff([1,2,2,2,3],[2])
-arrayDiff([-19,-10,-5,-9,4,9,-11,0],[-19,-10,-5,-9,4,9,-11])
-
-
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); //"(123) 456-7890")
+createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
