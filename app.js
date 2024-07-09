@@ -1,21 +1,15 @@
-function createPhoneNumber(numbers) {
-  let first3 = [];
-  let mid = [];
-  let end = [];
-
-  for (let i = 0; i < numbers.length; i++) {
-    if (i < 3) {
-      first3.push(numbers[i]);
-    } else if (i < 6) {
-      mid.push(numbers[i]);
+function findOutlier(integers) {
+  let odd = [];
+  let even = [];
+  integers.filter((e) => {
+    if (e % 2 === 0) {
+      even.push(e);
     } else {
-      end.push(numbers[i]);
+      odd.push(e);
     }
-  }
-
-  return `(${first3.join("")}) ${mid.join("")}-${end.join("")}`;
+  });
+ return odd.length === 1 ? odd[0] : even[0]
 }
+findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]); //return 11 as the only odd num
 
-createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); //"(123) 456-7890")
-createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
-createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+
