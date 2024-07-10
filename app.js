@@ -1,15 +1,20 @@
-function findOutlier(integers) {
-  let odd = [];
-  let even = [];
-  integers.filter((e) => {
-    if (e % 2 === 0) {
-      even.push(e);
+function duplicateCount(text) {
+  let newObj = {};
+  let arr = []
+  for (let i = 0; i < text.toLowerCase().length; i++) {
+    if (newObj[text[i]]) {
+      newObj[text[i]] += 1;
     } else {
-      odd.push(e);
+      newObj[text[i]] = 1;
     }
-  });
- return odd.length === 1 ? odd[0] : even[0]
+  }
+
+  for(const obj in newObj){
+    if(newObj[obj]>1){
+      arr.push(obj)
+    }
+  }
+console.log(arr.length);
 }
-findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]); //return 11 as the only odd num
 
-
+duplicateCount("aabBcde");
