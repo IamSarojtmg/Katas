@@ -28,9 +28,4 @@ console.log(result);
 return result
 }
 
-
-// isValidWalk(['n','s','n','s','n','s','n','s','n','s'])
-// isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e'])
-// isValidWalk(['w','w'])
-// isValidWalk(['n','n','n','s','n','s','n','s','n','s'])
 isValidWalk(['n','n','e','s','s','s','s','w','n','n'])
