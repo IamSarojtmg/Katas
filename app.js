@@ -1,13 +1,16 @@
-function countRepeats(str) {
-    const arr = str.split('')
-    const red = arr.reduce((acc,char)=>{
-        console.log(acc);
-        console.log(char,'char');
-        
-        
-    })
-    
-    
+function moveTen(s) {
+  const abc = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+  let shallow = [...s];
+  let arr = [];
+
+  shallow.forEach((e) => {
+    let x = abc.indexOf(e) + 10;
+    arr.push(abc[x]);
+  });
+  let result = arr.join("");
+  return result;
 }
 
-countRepeats('AABCCD')
+moveTen("testcase"), "docdmkco";
+moveTen("codewars"), "mynogkbc";
+moveTen("exampletesthere"), "ohkwzvodocdrobo";
