@@ -1,16 +1,13 @@
-function moveTen(s) {
-  const abc = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
-  let shallow = [...s];
-  let arr = [];
-
-  shallow.forEach((e) => {
-    let x = abc.indexOf(e) + 10;
-    arr.push(abc[x]);
+function checkThreeAndTwo(array) {
+  // console.log(array);
+  //find dub
+  //send to an array
+  //length of three arr is 3 and length of 2 arr is 2 return true else false
+  const x = array.filter((e, i) => {
+    return array.indexOf(e) !== i;
   });
-  let result = arr.join("");
-  return result;
+  console.log(x);
+  
 }
 
-moveTen("testcase"), "docdmkco";
-moveTen("codewars"), "mynogkbc";
-moveTen("exampletesthere"), "ohkwzvodocdrobo";
+checkThreeAndTwo(["a", "a", "a", "b", "b"]);
