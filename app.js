@@ -1,32 +1,31 @@
-function persistence(num) {
-const shallow = num.toString().split('').map(Number)
-let newArr = [];
-const secondArr = []
+const obj = {
+  a: "1",
+  e: "2",
+  i: "3",
+  o: "4",
+  u: "5",
+};
 
-if(shallow.length>1){
-for (let i = 0; i < shallow.length; i++) {
-  const element = shallow[i];
-  let times = element * shallow[i+1]
-  newArr.push(times)
-}
-if(newArr[0].toString().split('').map(Number).length > 1){
-  for (let i = 0; i < newArr[0].toString().split('').map(Number).length; i++) {
-    const element = shallow[i];
-    let times = element * shallow[i+1]
-    newArr = []
-    newArr.push(times)
+function decode(string) {
+  let result = [];
+  for (let i = 0; i < string.length; i++) {
+    const element = string[i];
+    if (element.toLowerCase() === "2") {
+      result.push('e');
+    } else if (element === "1") {
+      result.push('a');
+    } else if (element.toLowerCase() === "3") {
+      result.push('i');
+    } else if (element.toLowerCase() === "4") {
+      result.push('o');
+    } else if (element.toLowerCase() === "5") {
+      result.push('u');
+    } else {
+      result.push(element);
+    }
   }
-}
-console.log(newArr);
-
+  return result.join('')
 }
 
-//if length is more than 1 seperate the digits [3,9] if not return the number
-//times all of the element
-// send the result into new array
-//continue until its single length
 
-
-}
-
-persistence(39),3
+decode("h2ll4"), "hello";
